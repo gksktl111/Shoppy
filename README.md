@@ -8,3 +8,4 @@
 # 사용하는 기술 스택
 
 - firebase, cloudinary, react
+- git add -p 사용해보기
