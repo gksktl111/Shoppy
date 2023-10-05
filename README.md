@@ -8,3 +8,5 @@
 # 사용하는 기술 스택
 
 - firebase, cloudinary, react
+
+- firebase 리얼타임 디비 쓰는데 문제 생김

@@ -13,6 +13,8 @@ export default function Navbar() {
     onuserStateChange(setUser);
   }, []);
 
+  console.log(user.uid);
+
   return (
     <header className={styles.header}>
       <Link to='/' className={styles.title__container}>
@@ -21,10 +23,13 @@ export default function Navbar() {
       </Link>
       <nav className={styles.nav}>
         <Link to='/products'>Products</Link>
-        <Link to='/carts'>Carts</Link>
-        <Link to='/products/new'>
-          <BsFillPencilFill />
-        </Link>
+        {user && <Link to='/carts'>Carts</Link>}
+        {user && (
+          <Link to='/products/new'>
+            <BsFillPencilFill />
+          </Link>
+        )}
+
         <div className={styles.userInfo}>
           {user && <User user={user} />}
           {!user && (

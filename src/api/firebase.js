@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
+import { getDatabase, ref, child, get } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -30,4 +31,8 @@ export function onuserStateChange(callback) {
   onAuthStateChanged(auth, (user) => {
     callback(user);
   });
+}
+
+async function adminUser(user) {
+  return get();
 }
