@@ -1,0 +1,75 @@
+.header {
+  height: 70px;
+  display: flex;
+
+  padding: 0 20px 0 20px;
+
+  border-bottom: solid 1px #c9c8c8;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title__container {
+  display: flex;
+
+  color: rgb(245, 102, 214);
+  text-decoration: none;
+
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 2.6rem;
+}
+
+.nav {
+  display: flex;
+
+  gap: 1.4rem;
+}
+
+.nav a {
+  display: flex;
+
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+
+  align-items: center;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 100%;
+
+  background-color: aqua;
+}
+
+.login {
+  height: 50px;
+  font-size: 1.4rem;
+  color: #ffffff;
+
+  background-color: #fa5e20;
+  border-radius: 15px;
+  border: none;
+
+  padding: 10px;
+
+  cursor: pointer;
+}
