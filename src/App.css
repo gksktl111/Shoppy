@@ -1,2 +1,34 @@
 :root {
+  /* App Colors */
+  /* 한단계 더 추상화 해서 사용 */
+  --color--primary: var(--color-black);
+  --color--btn: var(--color--orange);
+
+  /*basic Colors */
+
+  --color--white: #ffffff;
+
+  --color--lightGray: #ececec;
+
+  --color--gray: #b9b9b9;
+
+  --color--black: #050a13;
+
+  --color--red: #f73f3f;
+
+  --color--blue: #03e8f9;
+
+  --color--orange: #fa5e20;
+
+  --color--darkorange: #b6683d;
+
+  --color--navy: #144272;
+
+  --color--darkBlue: #183a61;
+
+  --color--pink: rgb(245, 102, 214);
+}
+
+* {
+  box-sizing: border-box;
 }

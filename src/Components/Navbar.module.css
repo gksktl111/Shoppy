@@ -4,7 +4,7 @@
 
   padding: 0 20px 0 20px;
 
-  border-bottom: solid 1px #c9c8c8;
+  border-bottom: solid 1px var(--color--gray);
 
   align-items: center;
   justify-content: space-between;
@@ -13,7 +13,7 @@
 .title__container {
   display: flex;
 
-  color: rgb(245, 102, 214);
+  color: var(--color--pink);
   text-decoration: none;
 
   align-items: center;
@@ -34,7 +34,7 @@
 .nav a {
   display: flex;
 
-  color: #000000;
+  color: var(--color--black);
   font-size: 1.4rem;
   font-weight: 600;
 
@@ -56,16 +56,14 @@
   height: 40px;
 
   border-radius: 100%;
-
-  background-color: aqua;
 }
 
 .login {
   height: 50px;
   font-size: 1.4rem;
-  color: #ffffff;
+  color: var(--color--white);
 
-  background-color: #fa5e20;
+  background-color: var(--color--orange);
   border-radius: 15px;
   border: none;
 
