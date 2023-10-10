@@ -58,3 +58,13 @@ export async function addNewProduct(product, imageUrl) {
     options: product.options.split(','),
   });
 }
+
+export async function loadProduct() {
+  return get(ref(database, 'product')) //
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const productData = snapshot.val();
+        return productData;
+      }
+    });
+}

@@ -1,6 +1,11 @@
 import React from 'react';
-import Header from '../Components/Navbar';
+import CardList from '../Components/CardList';
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      {/* 배너만들기 */}
+      <CardList />
+    </div>
+  );
 }

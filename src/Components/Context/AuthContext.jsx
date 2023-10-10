@@ -8,7 +8,6 @@ export function AuthContextProvider({ children }) {
 
   useEffect(() => {
     onuserStateChange((user) => {
-      console.log(user);
       setUser(user);
     });
   }, []);
