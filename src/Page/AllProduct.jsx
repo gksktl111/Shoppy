@@ -1,5 +1,10 @@
 import React from 'react';
+import CardList from '../Components/CardList';
 
 export default function AllProduct() {
-  return <div>AllProduct</div>;
+  return (
+    <div>
+      <CardList />
+    </div>
+  );
 }

@@ -1,34 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Card from './Card';
-import { loadProduct } from '../api/firebase';
-
+import { loadProducts } from '../api/firebase';
+import styles from './CardList.module.css';
+import { useQuery } from '@tanstack/react-query';
 export default function CardList() {
-  const [imageUrls, setImageUrls] = useState([]);
-
-  useEffect(() => {
-    loadProduct()
-      .then((product) => {
-        // 이미지 URL을 추출하여 배열에 저장
-        // Object.values : 객체를 배열로 변환해줌
-        // console.log(Object.values(product));
-        const urls = Object.values(product).map((item) => item.imgae);
-        setImageUrls(urls);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  const {
+    isLoding,
+    error,
+    data: products,
+  } = useQuery(['products'], loadProducts);
 
   return (
-    <div>
-      <ul>
-        {/* 카드 리스트 css작성하기  */}
-        {imageUrls.map((url, index) => (
-          <li key={index}>
-            <Card url={url} index={index} />
-          </li>
-        ))}
+    <>
+      {isLoding && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {console.log(products)}
+      <ul className={styles.cardList__container}>
+        {products &&
+          products.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
       </ul>
-    </div>
+    </>
   );
 }

@@ -1,0 +1,11 @@
+.banner__container {
+  height: 50vh;
+  width: 98vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin: 10px 10px;
+  border-radius: 10px;
+
+  background-image: url('../../public/img/banner__img.jpg');
+}

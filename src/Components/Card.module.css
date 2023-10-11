@@ -1,0 +1,43 @@
+.img__container {
+  width: 500px;
+  height: 680px;
+
+  border-radius: 10px;
+  margin-bottom: 25px;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  overflow: hidden;
+
+  transition: all 300ms ease-in-out;
+}
+
+.img__container:hover {
+  transform: scale(1.03);
+}
+
+.img {
+  width: 100%;
+  height: 600px;
+}
+
+.img__data {
+  height: 80px;
+
+  font-size: 1.2rem;
+
+  padding: 8px;
+}
+
+.product__mainData {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.product__subData {
+  font-size: 1rem;
+
+  color: rgb(107, 107, 107);
+}

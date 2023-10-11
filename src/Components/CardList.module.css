@@ -1,0 +1,9 @@
+.cardList__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+
+  place-items: center;
+  padding: 2rem 10rem;
+
+  list-style-type: none;
+}

@@ -54,17 +54,27 @@ export async function addNewProduct(product, imageUrl) {
     ...product,
     id,
     price: parseInt(product.price),
-    imgae: imageUrl,
+    image: imageUrl,
     options: product.options.split(','),
   });
 }
 
-export async function loadProduct() {
+export async function loadProducts() {
   return get(ref(database, 'product')) //
     .then((snapshot) => {
       if (snapshot.exists()) {
-        const productData = snapshot.val();
-        return productData;
+        return Object.values(snapshot.val());
+      }
+    });
+}
+
+export async function loadProduct(id) {
+  return get(ref(database, 'product')) //
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const products = Object.values(snapshot.val());
+        const product = products.find((product) => product.id === id); // product의 id와 일치하는 객체를 찾음
+        return product;
       }
     });
 }
