@@ -22,25 +22,25 @@ export default function ProductDetail() {
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {product && (
-        <div>
+        <div className={styles.container}>
           <img src={product.imgae} alt={product.title} />
-          <div>
-            <span>{product.title}</span>
-            <span>￦{product.price}</span>
-            <span>{product.description}</span>
+          <div className={styles.description__container}>
+            <div>
+              <p>{product.title}</p>
+              <p>￦{product.price}</p>
+            </div>
+            <p>{product.description}</p>
 
             <form onSubmit={handleAddCart}>
-              <span>옵션 : </span>
-              <select>
-                <option value='javascript'>JavaScript</option>
-                <option value='php'>PHP</option>
-                <option value='java'>Java</option>
-                <option value='golang'>Golang</option>
-                <option value='python'>Python</option>
-                <option value='c#'>C#</option>
-                <option value='C++'>C++</option>
-                <option value='erlang'>Erlang</option>
-              </select>
+              <div>
+                <span>옵션 : </span>
+                <select>
+                  {product.options[0] && <option value='S'>S</option>}
+                  {product.options[1] && <option value='M'>M</option>}
+                  {product.options[2] && <option value='L'>L</option>}
+                  {product.options[3] && <option value='XL'>XL</option>}
+                </select>
+              </div>
               <button>장바구니에 추가</button>
             </form>
           </div>

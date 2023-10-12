@@ -12,4 +12,5 @@
 # 해결해야 될 것
 
 - 필요한 색상 css로 사용자 지정해놓기 😀
-- card 및 cardList css작업, home페이지 배너 만들기
+- card 및 cardList css작업, 홈페이지 배너 만들기 😀
+- 파이어베이스 image 오타 수정해서 다시 올리기

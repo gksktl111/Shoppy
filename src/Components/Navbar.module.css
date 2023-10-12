@@ -4,7 +4,7 @@
 
   padding: 0 20px 0 20px;
 
-  border-bottom: solid 1px var(--color--gray);
+  border-bottom: solid 1px #c9c8c8;
 
   align-items: center;
   justify-content: space-between;
@@ -13,7 +13,7 @@
 .title__container {
   display: flex;
 
-  color: var(--color--pink);
+  color: rgb(245, 102, 214);
   text-decoration: none;
 
   align-items: center;
@@ -34,7 +34,7 @@
 .nav a {
   display: flex;
 
-  color: var(--color--black);
+  color: #000000;
   font-size: 1.4rem;
   font-weight: 600;
 
@@ -56,18 +56,6 @@
   height: 40px;
 
   border-radius: 100%;
-}
 
-.login {
-  height: 50px;
-  font-size: 1.4rem;
-  color: var(--color--white);
-
-  background-color: var(--color--orange);
-  border-radius: 15px;
-  border: none;
-
-  padding: 10px;
-
-  cursor: pointer;
+  background-color: aqua;
 }

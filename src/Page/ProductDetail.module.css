@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 1rem;
+
+  margin-top: 20px;
+}
+
+.description__container {
+  width: 30vw;
+  height: 30vh;
+
+  background-color: aqua;
+}
