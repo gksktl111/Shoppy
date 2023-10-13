@@ -67,14 +67,3 @@ export async function loadProducts() {
       }
     });
 }
-
-export async function loadProduct(id) {
-  return get(ref(database, 'product')) //
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        const products = Object.values(snapshot.val());
-        const product = products.find((product) => product.id === id); // product의 id와 일치하는 객체를 찾음
-        return product;
-      }
-    });
-}

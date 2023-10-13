@@ -1,51 +1,52 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { loadProduct } from '../api/firebase';
-import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './ProductDetail.module.css';
 
 export default function ProductDetail() {
-  const { id } = useParams();
-
   const {
-    isLoading,
-    error,
-    data: product,
-  } = useQuery(['product'], () => loadProduct(id));
+    state: {
+      product: { id, image, title, description, category, price, options },
+    },
+  } = useLocation();
+
+  const [selected, setSelected] = useState(options && options[0]);
 
   const handleAddCart = (e) => {
     e.preventDefault();
   };
 
-  return (
-    <>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {product && (
-        <div className={styles.container}>
-          <img src={product.imgae} alt={product.title} />
-          <div className={styles.description__container}>
-            <div>
-              <p>{product.title}</p>
-              <p>￦{product.price}</p>
-            </div>
-            <p>{product.description}</p>
+  const handleSelect = (e) => setSelected(e.target.value);
 
-            <form onSubmit={handleAddCart}>
-              <div>
-                <span>옵션 : </span>
-                <select>
-                  {product.options[0] && <option value='S'>S</option>}
-                  {product.options[1] && <option value='M'>M</option>}
-                  {product.options[2] && <option value='L'>L</option>}
-                  {product.options[3] && <option value='XL'>XL</option>}
-                </select>
-              </div>
-              <button>장바구니에 추가</button>
-            </form>
-          </div>
+  return (
+    <section>
+      <section className={styles.container}>
+        <img src={image} alt={title} className={styles.product__img} />
+        <div className={styles.description__container}>
+          <p className={styles.product__title}>{title}</p>
+          <p className={styles.product__price}>￦{price}</p>
+          <p className={styles.product__description}>{description}</p>
+
+          <form onSubmit={handleAddCart}>
+            <div className={styles.option__container}>
+              <label htmlFor='select' className={styles.option__span}>
+                옵션:{' '}
+              </label>
+              <select
+                id='select'
+                className={styles.select}
+                onChange={handleSelect}
+                value={selected}
+              >
+                {options &&
+                  options.map((option, index) => (
+                    <option key={index}>{option}</option>
+                  ))}
+              </select>
+            </div>
+            <button className={styles.addCart__btn}>장바구니에 추가</button>
+          </form>
         </div>
-      )}
-    </>
+      </section>
+    </section>
   );
 }
