@@ -14,6 +14,7 @@ export default function ProductDetail() {
   const handleAddCart = (e) => {
     e.preventDefault();
   };
+  console.log(id, image, title, description, category, price, options);
 
   const handleSelect = (e) => setSelected(e.target.value);
 
@@ -22,6 +23,7 @@ export default function ProductDetail() {
       <section className={styles.container}>
         <img src={image} alt={title} className={styles.product__img} />
         <div className={styles.description__container}>
+          <p>{category}</p>
           <p className={styles.product__title}>{title}</p>
           <p className={styles.product__price}>￦{price}</p>
           <p className={styles.product__description}>{description}</p>

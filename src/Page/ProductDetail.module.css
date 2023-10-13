@@ -1,8 +1,7 @@
 .container {
   display: flex;
 
-  padding: 4px;
-  margin-top: 20px;
+  padding: 20px;
 
   gap: 1rem;
 
@@ -16,7 +15,7 @@
 }
 
 .description__container {
-  width: 30vw;
+  width: 40%;
   height: 30vh;
 
   padding: 10px;
@@ -68,6 +67,10 @@
   width: 80%;
 
   cursor: pointer;
+
+  border: dashed var(--color--pink);
+
+  outline: none;
 }
 
 .addCart__btn {
@@ -119,5 +122,7 @@
 
   .addCart__btn {
     font-size: 1rem;
+
+    margin-bottom: 20px;
   }
 }

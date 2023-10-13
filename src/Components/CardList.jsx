@@ -14,7 +14,6 @@ export default function CardList() {
     <>
       {isLoding && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {console.log(products)}
       <ul className={styles.cardList__container}>
         {products &&
           products.map((product) => (
