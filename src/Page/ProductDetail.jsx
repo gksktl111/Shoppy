@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './ProductDetail.module.css';
+import Button from '../Components/ui/Button';
+import useCart from '../Hook/useCart';
 
 export default function ProductDetail() {
+  const { addOrUpdateItem } = useCart();
+
   const {
     state: {
       product: { id, image, title, description, category, price, options },
@@ -11,12 +15,16 @@ export default function ProductDetail() {
 
   const [selected, setSelected] = useState(options && options[0]);
 
+  const handleSelect = (e) => {
+    setSelected(e.target.value);
+  };
+
   const handleAddCart = (e) => {
     e.preventDefault();
-  };
-  console.log(id, image, title, description, category, price, options);
 
-  const handleSelect = (e) => setSelected(e.target.value);
+    const product = { id, image, title, price, option: selected, quantity: 1 };
+    addOrUpdateItem.mutate(product);
+  };
 
   return (
     <section>
@@ -31,7 +39,7 @@ export default function ProductDetail() {
           <form onSubmit={handleAddCart}>
             <div className={styles.option__container}>
               <label htmlFor='select' className={styles.option__span}>
-                옵션:{' '}
+                옵션:
               </label>
               <select
                 id='select'
@@ -45,7 +53,7 @@ export default function ProductDetail() {
                   ))}
               </select>
             </div>
-            <button className={styles.addCart__btn}>장바구니에 추가</button>
+            <Button text={'장바구니 추가'} />
           </form>
         </div>
       </section>

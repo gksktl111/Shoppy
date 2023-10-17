@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import Home from './Page/Home';
 import NotFound from './Page/NotFound';
 import AllProducts from './Page/AllProduct';
-import MyCarts from './Page/MyCarts';
+import MyCart from './Page/MyCart';
 import NewProduct from './Page/NewProduct';
 import ProtectedRoute from './Page/ProtectedRoute';
 import ProductDetail from './Page/ProductDetail';
@@ -34,10 +34,10 @@ const router = createBrowserRouter([
         element: <ProductDetail />,
       },
       {
-        path: '/carts',
+        path: '/cart',
         element: (
           <ProtectedRoute>
-            <MyCarts />
+            <MyCart />
           </ProtectedRoute>
         ),
       },

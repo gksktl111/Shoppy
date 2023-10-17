@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 23vw;
+  height: 100px;
+
+  background-color: var(--color--lightGray);
+
+  border-radius: 20px;
+
+  font-size: 1.4rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.price {
+  color: var(--color--pink);
+  font-weight: bold;
+}
